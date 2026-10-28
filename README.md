@@ -1,13 +1,18 @@
 # AI Study Planner
 ### Final Capstone Project Proposal and Prototype
 
-> **Tagline:** Plan Smarter. Study Better. Achieve More.
+> Tagline: Plan Smarter. Study Better. Achieve More.
 
-**Project type:**Mehejabin Jannat Mourin  
-**Student ID:** IT-24062  
+**Project type:**Mehejabin Jannat Mourin
+
+**Student ID:** IT-24062
+
 **Course:** Software Engineering and Project Management(ICT-31007) 
+
 **Instructor:** Prof.Dr Ziaur Rahman
+
 **Institution:** Mawlana Bhashani Science and Technology
+
 **Proposal date:** 27.10.26 
 
 ---
