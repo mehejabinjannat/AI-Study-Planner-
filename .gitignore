@@ -1,0 +1,5 @@
+*.class
+.env
+.idea/
+.vscode/
+.DS_Store
