@@ -3,7 +3,7 @@
 
 > Tagline: Plan Smarter. Study Better. Achieve More.
 
-**Project type:**Mehejabin Jannat Mourin
+**Project type:** Mehejabin Jannat Mourin
 
 **Student ID:** IT-24062
 
