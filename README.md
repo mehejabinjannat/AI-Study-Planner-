@@ -3,14 +3,12 @@
 
 > **Tagline:** Plan Smarter. Study Better. Achieve More.
 
-**Project type:** Web-based academic planning system  
-**Prepared by:** [Your Name]  
-**Student ID:** [Your Student ID]  
-**Course:** [Course Code and Title]  
-**Instructor:** [Instructor Name]  
-**Institution:** [University/College Name]  
-**Proposal date:** [Submission Date]  
-**Repository:** [Add your GitHub repository URL]
+**Project type:**Mehejabin Jannat Mourin  
+**Student ID:** IT-24062  
+**Course:** Software Engineering and Project Management(ICT-31007) 
+**Instructor:** Prof.Dr Ziaur Rahman
+**Institution:** Mawlana Bhashani Science and Technology
+**Proposal date:** 27.10.26 
 
 ---
 
