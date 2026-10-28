@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Study Planner - Project Proposal</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #e9edf3;
+    color: #222;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    padding: 25mm 25mm 23mm;
+    background: white;
+    box-shadow: 0 2px 12px #00000018;
+    position: relative;
+}
+
+h1, h2, h3 {
+    color: #172d4f;
+}
+
+h1 {
+    font-size: 27pt;
+    text-align: center;
+}
+
+h2 {
+    font-size: 17pt;
+    border-bottom: 1px solid #9aabc1;
+    padding-bottom: 5px;
+    margin-top: 28px;
+}
+
+h3 {
+    font-size: 13pt;
+    margin-top: 18px;
+}
+
+p {
+    text-align: justify;
+}
+
+.cover {
+    min-height: 250mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cover p {
+    text-align: center;
+}
+
+.university {
+    font-size: 15pt;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.department {
+    font-size: 12pt;
+}
+
+.line {
+    width: 65%;
+    border-top: 2px solid #9aabc1;
+    margin: 28px auto;
+}
+
+.subtitle {
+    font-size: 14pt;
+    font-style: italic;
+    max-width: 500px;
+}
+
+.details {
+    width: 90%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+.details td {
+    padding: 7px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.details td:first-child {
+    font-weight: bold;
+    width: 35%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 10.5pt;
+}
+
+th, td {
+    border: 1px solid #9ca9b8;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #eaf0f7;
+    color: #172d4f;
+}
+
+.toc {
+    list-style: none;
+    padding: 0;
+}
+
+.toc li {
+    padding: 7px 2px;
+    border-bottom: 1px dotted #b5bdc8;
+}
+
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.page-number {
+    position: absolute;
+    bottom: 12mm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10pt;
+    color: #555;
+}
+
+.page-break {
+    page-break-before: always;
+    break-before: page;
+}
+
+.references li {
+    overflow-wrap: anywhere;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #244e80;
+}
+
+@media print {
+    body {
+        background: white;
+        font-size: 11pt;
+    }
+
+    .page {
+        width: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 20mm 23mm;
+        box-shadow: none;
+    }
+
+    .page-break {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    a {
+        color: #222;
+        text-decoration: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- COVER PAGE -->
+<section class="page">
+    <div class="cover">
+        <p class="university">
+            Mawlana Bhashani Science and Technology University
+        </p>
+
+        <p class="department">
+            Department of Information and Communication Technology
+        </p>
+
+        <div class="line"></div>
+
+        <p><b>PROJECT PROPOSAL</b></p>
+
+        <h1>AI Study Planner</h1>
+
+        <p class="subtitle">
+            A Student-Centered Academic Task and Study Planning Application
+        </p>
+
+        <div class="line"></div>
+
+        <p>
+            Submitted in partial fulfilment of the course requirements for
+        </p>
+
+        <p>
+            <b>Software Engineering and Project Management (ICT-31007)</b>
+        </p>
+
+        <table class="details">
+            <tr>
+                <td>Submitted By</td>
+                <td>Mehejabin Jannat Mourin</td>
+            </tr>
+            <tr>
+                <td>Student ID</td>
+                <td>IT-24062</td>
+            </tr>
+            <tr>
+                <td>Submitted To</td>
+                <td>Prof. Dr. Ziaur Rahman</td>
+            </tr>
+            <tr>
+                <td>Institution</td>
+                <td>Mawlana Bhashani Science and Technology University</td>
+            </tr>
+            <tr>
+                <td>Proposal Date</td>
+                <td>27 October 2026</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="page page-break">
+    <h2>Table of Contents</h2>
+
+    <ol class="toc">
+        <li>Abstract</li>
+        <li>Introduction and Background</li>
+        <li>Problem Statement</li>
+        <li>Aim and Objectives</li>
+        <li>Project Scope</li>
+        <li>Stakeholders and User Roles</li>
+        <li>Functional Requirements</li>
+        <li>Non-Functional Requirements</li>
+        <li>Feasibility Study</li>
+        <li>System Development Methodology</li>
+        <li>Proposed System Architecture</li>
+        <li>Technology Stack</li>
+        <li>Database Design</li>
+        <li>Testing Strategy</li>
+        <li>Project Timeline</li>
+        <li>Risk Analysis and Mitigation</li>
+        <li>Expected Outcomes</li>
+        <li>Conclusion</li>
+        <li>References</li>
+    </ol>
+</section>
+
+<!-- ABSTRACT -->
+<section class="page page-break">
+    <h2>Abstract</h2>
+
+    <p>
+        Students often need to manage multiple academic responsibilities,
+        including classes, assignments, quizzes, examinations, projects,
+        and personal commitments. Without an organized planning system,
+        they may experience difficulty prioritizing tasks, managing time,
+        and monitoring academic progress.
+    </p>
+
+    <p>
+        The proposed AI Study Planner is a student-centered application
+        designed to organize academic tasks and support daily study
+        planning. It will provide features for managing subjects,
+        deadlines, task priorities, study schedules, reminders, and
+        progress tracking. A recommendation component is planned to help
+        students prioritize tasks using factors such as due dates,
+        estimated duration, and importance.
+    </p>
+
+    <p>
+        The proposed technology stack includes Flutter and Dart for the
+        mobile interface, Firebase Authentication for user
+        authentication, Cloud Firestore for data storage, and Node.js
+        with Express.js for backend API services. The system will be
+        developed and tested incrementally. The project aims to provide
+        a practical and accessible academic planning solution for
+        students.
+    </p>
+
+    <h2>1. Introduction and Background</h2>
+
+    <p>
+        Effective time management is an important part of academic
+        success. Students frequently handle several subjects and
+        deadlines simultaneously. Traditional methods, such as paper
+        diaries and separate reminder applications, may not provide a
+        unified view of academic activities.
+    </p>
+
+    <p>
+        The AI Study Planner proposes a centralized platform where
+        students can record tasks, organize their schedules, and review
+        their progress. The system is intended to make academic planning
+        more structured and easier to manage.
+    </p>
+
+    <h2>2. Problem Statement</h2>
+
+    <p>
+        Students may find it difficult to prioritize assignments,
+        remember deadlines, estimate study time, and maintain a
+        consistent routine. Information distributed across notebooks,
+        calendars, and messaging applications can make planning
+        inefficient.
+    </p>
+
+    <p>
+        Therefore, a unified academic planning application is proposed
+        to help students organize their responsibilities and make
+        informed decisions about how to use their available study time.
+    </p>
+
+    <h2>3. Aim and Objectives</h2>
+
+    <h3>3.1 Aim</h3>
+    <p>
+        To design and develop an academic planning application that
+        helps students organize study tasks, manage deadlines, and
+        monitor their study progress.
+    </p>
+
+    <h3>3.2 Objectives</h3>
+    <ul>
+        <li>Provide secure user registration and login.</li>
+        <li>Allow students to create and manage subjects and tasks.</li>
+        <li>Record deadlines, task priorities, and estimated durations.</li>
+        <li>Generate an organized daily study plan.</li>
+        <li>Provide reminders for upcoming deadlines.</li>
+        <li>Track completed and pending tasks.</li>
+        <li>Explore task-prioritization recommendations.</li>
+        <li>Develop a user-friendly and maintainable application.</li>
+    </ul>
+</section>
+
+<!-- SCOPE -->
+<section class="page page-break">
+    <h2>4. Project Scope</h2>
+
+    <h3>4.1 Included Features</h3>
+    <ul>
+        <li>User registration and authentication.</li>
+        <li>Subject and academic task management.</li>
+        <li>Deadline and priority management.</li>
+        <li>Daily and weekly study planning.</li>
+        <li>Task completion tracking.</li>
+        <li>Progress summaries and reminders.</li>
+        <li>Basic task-prioritization recommendations.</li>
+    </ul>
+
+    <h3>4.2 Limitations</h3>
+    <ul>
+        <li>The initial version will focus on individual students.</li>
+        <li>Recommendations will depend on the quality of user-provided data.</li>
+        <li>Advanced machine-learning features may require a later development phase.</li>
+        <li>Some features may require an internet connection.</li>
+    </ul>
+
+    <h2>5. Stakeholders and User Roles</h2>
+
+    <table>
+        <tr>
+            <th>Stakeholder</th>
+            <th>Role and Responsibility</th>
+        </tr>
+        <tr>
+            <td>Student</td>
+            <td>Creates subjects, schedules tasks, checks deadlines, and monitors progress.</td>
+        </tr>
+        <tr>
+            <td>Administrator</td>
+            <td>May manage application settings and oversee system operation if an administrative module is implemented.</td>
+        </tr>
+        <tr>
+            <td>Project Developer</td>
+            <td>Designs, implements, tests, and maintains the application.</td>
+        </tr>
+        <tr>
+            <td>Instructor</td>
+            <td>Reviews the project and provides academic feedback.</td>
+        </tr>
+    </table>
+
+    <h2>6. Functional Requirements</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Requirement</th>
+            <th>Priority</th>
+        </tr>
+        <tr>
+            <td>FR-01</td>
+            <td>The system shall allow users to register and log in.</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>FR-02</td>
+            <td>The system shall allow users to create, edit, and delete tasks.</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>FR-03</td>
+            <td>The system shall store task deadlines and priorities.</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>FR-04</td>
+            <td>The system shall organize tasks into a study plan.</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>FR-05</td>
+            <td>The system shall allow users to mark tasks as completed.</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>FR-06</td>
+            <td>The system shall display summaries of study progress.</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>FR-07</td>
+            <td>The system should support reminders for upcoming deadlines.</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>FR-08</td>
+            <td>The system should recommend task order based on urgency and duration.</td>
+            <td>Medium</td>
+        </tr>
+    </table>
+
+    <h2>7. Non-Functional Requirements</h2>
+
+    <ul>
+        <li><b>Usability:</b> The interface should be easy to understand and navigate.</li>
+        <li><b>Performance:</b> Common operations should respond within a reasonable time.</li>
+        <li><b>Security:</b> Authentication and access controls should protect user data.</li>
+        <li><b>Reliability:</b> The application should handle errors without losing saved data.</li>
+        <li><b>Maintainability:</b> Code should be organized into clear modules.</li>
+        <li><b>Scalability:</b> The design should allow future features to be added.</li>
+        <li><b>Compatibility:</b> The mobile interface should support intended devices.</li>
+    </ul>
+</section>
+
+<!-- FEASIBILITY -->
+<section class="page page-break">
+    <h2>8. Feasibility Study</h2>
+
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Assessment</th>
+        </tr>
+        <tr>
+            <td>Technical</td>
+            <td>Flutter, Firebase, and Node.js provide tools for implementing the proposed mobile application and backend services.</td>
+        </tr>
+        <tr>
+            <td>Economic</td>
+            <td>The project can begin with free development tools and free service tiers, subject to provider limits and usage costs.</td>
+        </tr>
+        <tr>
+            <td>Operational</td>
+            <td>The application addresses familiar student activities and is intended to be simple to use.</td>
+        </tr>
+        <tr>
+            <td>Schedule</td>
+            <td>A basic prototype can be developed incrementally within an academic project schedule.</td>
+        </tr>
+    </table>
+
+    <h2>9. System Development Methodology</h2>
+
+    <p>
+        An iterative development approach is proposed. The project will
+        be divided into manageable stages. Each stage will produce a
+        reviewable result and allow feedback before additional features
+        are introduced.
+    </p>
+
+    <ol>
+        <li>Requirement collection and analysis.</li>
+        <li>Interface and system design.</li>
+        <li>Database and backend planning.</li>
+        <li>Implementation of core features.</li>
+        <li>Integration and testing.</li>
+        <li>Evaluation, documentation, and final presentation.</li>
+    </ol>
+
+    <h2>10. Proposed System Architecture</h2>
+
+    <table>
+        <tr>
+            <th>Layer</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Presentation Layer</td>
+            <td>Flutter and Dart provide the mobile user interface.</td>
+        </tr>
+        <tr>
+            <td>Authentication Layer</td>
+            <td>Firebase Authentication manages user identity and sign-in.</td>
+        </tr>
+        <tr>
+            <td>Backend Layer</td>
+            <td>Node.js and Express.js provide planned API endpoints and application logic.</td>
+        </tr>
+        <tr>
+            <td>Data Layer</td>
+            <td>Cloud Firestore stores user, subject, task, and progress information.</td>
+        </tr>
+        <tr>
+            <td>Planning Component</td>
+            <td>A planned prioritization module ranks tasks using urgency, importance, and estimated duration.</td>
+        </tr>
+    </table>
+
+    <p>
+        The exact communication flow between the backend and database
+        will be finalized during implementation. Authentication and
+        database security rules will be configured to prevent
+        unauthorized access.
+    </p>
+
+    <h2>11. Technology Stack</h2>
+
+    <table>
+        <tr>
+            <th>Technology</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Flutter</td>
+            <td>Cross-platform mobile user interface.</td>
+        </tr>
+        <tr>
+            <td>Dart</td>
+            <td>Application programming language.</td>
+        </tr>
+        <tr>
+            <td>Firebase Authentication</td>
+            <td>User authentication.</td>
+        </tr>
+        <tr>
+            <td>Cloud Firestore</td>
+            <td>Cloud-based application data storage.</td>
+        </tr>
+        <tr>
+            <td>Node.js</td>
+            <td>Backend JavaScript runtime.</td>
+        </tr>
+        <tr>
+            <td>Express.js</td>
+            <td>Backend API framework.</td>
+        </tr>
+        <tr>
+            <td>Git and GitHub</td>
+            <td>Version control and project collaboration.</td>
+        </tr>
+        <tr>
+            <td>Figma or similar tool</td>
+            <td>Interface prototyping, if used.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- DATABASE AND TESTING -->
+<section class="page page-break">
+    <h2>12. Database Design</h2>
+
+    <p>
+        The proposed data model will organize information around users,
+        subjects, tasks, and study progress. The following is a
+        preliminary logical structure; the final schema will depend on
+        implementation decisions.
+    </p>
+
+    <table>
+        <tr>
+            <th>Collection / Entity</th>
+            <th>Example Fields</th>
+        </tr>
+        <tr>
+            <td>Users</td>
+            <td>userId, name, email, createdAt</td>
+        </tr>
+        <tr>
+            <td>Subjects</td>
+            <td>subjectId, userId, subjectName, semester</td>
+        </tr>
+        <tr>
+            <td>Tasks</td>
+            <td>taskId, userId, subjectId, title, dueDate, priority, duration, status</td>
+        </tr>
+        <tr>
+            <td>Study Sessions</td>
+            <td>sessionId, userId, taskId, startTime, duration, completionStatus</td>
+        </tr>
+    </table>
+
+    <p>
+        Access rules should ensure that users can access only their
+        authorized records. The database structure should be reviewed
+        and refined during implementation.
+    </p>
+
+    <h2>13. Testing Strategy</h2>
+
+    <table>
+        <tr>
+            <th>Testing Type</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Unit Testing</td>
+            <td>Check individual functions and components.</td>
+        </tr>
+        <tr>
+            <td>Integration Testing</td>
+            <td>Verify communication between application components and services.</td>
+        </tr>
+        <tr>
+            <td>Functional Testing</td>
+            <td>Confirm that features meet their stated requirements.</td>
+        </tr>
+        <tr>
+            <td>Usability Testing</td>
+            <td>Evaluate whether students can use the interface effectively.</td>
+        </tr>
+        <tr>
+            <td>Security Testing</td>
+            <td>Check authentication, authorization, and data access rules.</td>
+        </tr>
+        <tr>
+            <td>Performance Testing</td>
+            <td>Assess response times under representative usage conditions.</td>
+        </tr>
+    </table>
+
+    <h2>14. Project Timeline</h2>
+
+    <table>
+        <tr>
+            <th>Phase</th>
+            <th>Activities</th>
+            <th>Estimated Duration</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Requirement analysis and proposal</td>
+            <td>Week 1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Interface and system design</td>
+            <td>Weeks 2–3</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Database and authentication setup</td>
+            <td>Weeks 4–5</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Task and study planning features</td>
+            <td>Weeks 6–8</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Backend integration and recommendations</td>
+            <td>Weeks 9–10</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Testing and improvement</td>
+            <td>Weeks 11–12</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Documentation and presentation</td>
+            <td>Week 13</td>
+        </tr>
+    </table>
+
+    <p>
+        The timeline is an initial estimate and may be adjusted according
+        to course deadlines, implementation progress, and available
+        resources.
+    </p>
+</section>
+
+<!-- RISK AND CONCLUSION -->
+<section class="page page-break">
+    <h2>15. Risk Analysis and Mitigation</h2>
+
+    <table>
+        <tr>
+            <th>Risk</th>
+            <th>Potential Impact</th>
+            <th>Mitigation Strategy</th>
+        </tr>
+        <tr>
+            <td>Schedule delays</td>
+            <td>Incomplete features</td>
+            <td>Prioritize core features and review progress weekly.</td>
+        </tr>
+        <tr>
+            <td>Integration difficulties</td>
+            <td>Services may not communicate correctly</td>
+            <td>Test interfaces and APIs incrementally.</td>
+        </tr>
+        <tr>
+            <td>Data security issues</td>
+            <td>Unauthorized access to user information</td>
+            <td>Apply authentication, access rules, and secure configuration.</td>
+        </tr>
+        <tr>
+            <td>Incorrect recommendations</td>
+            <td>Unhelpful study plans</td>
+            <td>Use transparent rules and evaluate results with test cases.</td>
+        </tr>
+        <tr>
+            <td>Service limits or costs</td>
+            <td>Unexpected usage restrictions</td>
+            <td>Monitor service usage and review provider pricing.</td>
+        </tr>
+    </table>
+
+    <h2>16. Expected Outcomes</h2>
+
+    <ul>
+        <li>A functional prototype for managing academic tasks.</li>
+        <li>An organized interface for daily and weekly study plans.</li>
+        <li>A way to monitor completed and pending tasks.</li>
+        <li>A foundation for deadline reminders and task prioritization.</li>
+        <li>Project documentation and software testing records.</li>
+        <li>A maintainable structure that supports future improvements.</li>
+    </ul>
+
+    <h2>17. Conclusion</h2>
+
+    <p>
+        The AI Study Planner project proposes a practical approach to
+        academic task management and study planning. By bringing
+        subjects, deadlines, priorities, and progress tracking together,
+        the application aims to help students organize their academic
+        responsibilities more effectively.
+    </p>
+
+    <p>
+        The proposed technologies provide a foundation for developing
+        the application in stages. The project will focus first on
+        essential planning features, followed by testing and refinement.
+        Recommendation features will be evaluated before being treated
+        as reliable decision-support functionality.
+    </p>
+
+    <h2>18. References</h2>
+
+    <ol class="references">
+        <li>
+            Sommerville, I. (2016). <i>Software Engineering</i> (10th ed.).
+            Pearson.
+        </li>
+        <li>
+            Pressman, R. S., &amp; Maxim, B. R. (2019).
+            <i>Software Engineering: A Practitioner's Approach</i>
+            (9th ed.). McGraw-Hill Education.
+        </li>
+        <li>
+            Google. <i>Flutter Documentation</i>.
+            <a href="https://docs.flutter.dev/">https://docs.flutter.dev/</a>
+        </li>
+        <li>
+            Google. <i>Dart Documentation</i>.
+            <a href="https://dart.dev/guides">https://dart.dev/guides</a>
+        </li>
+        <li>
+            Google. <i>Firebase Authentication Documentation</i>.
+            <a href="https://firebase.google.com/docs/auth">
+                https://firebase.google.com/docs/auth
+            </a>
+        </li>
+        <li>
+            Google. <i>Cloud Firestore Documentation</i>.
+            <a href="https://firebase.google.com/docs/firestore">
+                https://firebase.google.com/docs/firestore
+            </a>
+        </li>
+        <li>
+            OpenJS Foundation. <i>Node.js Documentation</i>.
+            <a href="https://nodejs.org/docs/latest/api/">
+                https://nodejs.org/docs/latest/api/
+            </a>
+        </li>
+        <li>
+            OpenJS Foundation. <i>Express.js Documentation</i>.
+            <a href="https://expressjs.com/">https://expressjs.com/</a>
+        </li>
+        <li>
+            Object Management Group. (2017).
+            <i>Unified Modeling Language (UML), Version 2.5.1</i>.
+            <a href="https://www.omg.org/spec/UML/2.5.1">
+                https://www.omg.org/spec/UML/2.5.1
+            </a>
+        </li>
+    </ol>
+</section>
+
+</body>
+</html>
