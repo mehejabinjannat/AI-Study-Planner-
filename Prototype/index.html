@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate AI | Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header class="navbar">
+    <a class="logo" href="#" data-page="home">✦ StudyMate <span>AI</span></a>
+    <nav id="navigation">
+        <button class="nav-link active" data-page="home">Home</button>
+        <button class="nav-link" data-page="plan">My Study Plan</button>
+        <button class="nav-link" data-page="resources">Resources</button>
+        <button class="nav-link" data-page="activity">My Activity</button>
+    </nav>
+    <div class="profile"><span class="avatar">M</span> Mourin</div>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+</header>
+
+<main>
+    <!-- HOME PAGE -->
+    <section class="page active" id="home">
+        <div class="hero">
+            <div>
+                <p>Good morning, Mourin! ✨</p>
+                <h1>Plan smarter.<br>Study better.</h1>
+                <p>Let AI create a personalized study plan, track your progress and help you achieve your academic goals.</p>
+                <button class="btn lime" data-generate>✦ Generate AI Weekly Plan →</button>
+            </div>
+            <div class="hero-art">📚<br>💻</div>
+        </div>
+
+        <div class="stats">
+            <article class="card">
+                <span class="icon">◎</span>
+                <p>Overall Progress</p><h2>68%</h2>
+                <div class="progress"><span style="width:68%"></span></div>
+                <small>24 of 35 tasks completed</small>
+            </article>
+            <article class="card">
+                <span class="icon">▦</span>
+                <p>Today's Study Time</p><h2>2h 30m</h2>
+                <small>Target: 4 hours</small>
+            </article>
+            <article class="card">
+                <span class="icon">▤</span>
+                <p>Subjects</p><h2>5</h2>
+                <small>Active subjects</small>
+            </article>
+            <article class="card">
+                <span class="icon">🔥</span>
+                <p>Study Streak</p><h2>7 days</h2>
+                <small>Keep going!</small>
+            </article>
+        </div>
+
+        <div class="columns">
+            <article class="card">
+                <div class="heading">
+                    <h3>▦ Today's Schedule</h3>
+                    <button class="text-btn" data-page="plan">View all</button>
+                </div>
+                <div class="schedule">
+                    <p>09:00–10:30 <b>Mathematics</b><span>Study</span></p>
+                    <p>11:00–12:00 <b>English</b><span>Reading</span></p>
+                    <p>02:00–03:30 <b>Programming</b><span>Practice</span></p>
+                    <p>05:00–06:00 <b>Revision</b><span>Study</span></p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="heading">
+                    <h3>◷ Upcoming Deadlines</h3>
+                    <button class="text-btn" data-page="plan">View all</button>
+                </div>
+                <div class="deadline">
+                    <span>NOV<br><b>05</b></span>
+                    <div><b>Data Structures Assignment</b><small>Programming · 2 days left</small></div>
+                </div>
+                <div class="deadline">
+                    <span>NOV<br><b>07</b></span>
+                    <div><b>Calculus Quiz</b><small>Mathematics · 4 days left</small></div>
+                </div>
+                <div class="deadline">
+                    <span>NOV<br><b>10</b></span>
+                    <div><b>English Essay</b><small>English · 7 days left</small></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- STUDY PLAN PAGE -->
+    <section class="page" id="plan">
+        <div class="page-heading">
+            <h1>Study Tasks / AI Plan</h1>
+            <p>Your personalized study plan. Stay consistent and achieve your goals!</p>
+        </div>
+
+        <div class="ai-banner">
+            <div><h3>✦ Let AI create your personalized study plan</h3>
+                <p>Get a smart plan based on your goals, subjects and available time.</p></div>
+            <button class="btn" data-generate>Generate AI Plan</button>
+        </div>
+
+        <div class="toolbar">
+            <div class="filters">
+                <button class="filter active" data-filter="All">All</button>
+                <button class="filter" data-filter="Today">Today</button>
+                <button class="filter" data-filter="This Week">This Week</button>
+                <button class="filter" data-filter="Upcoming">Upcoming</button>
+            </div>
+            <select id="sortTasks">
+                <option value="priority">Sort by: Priority</option>
+                <option value="date">Sort by: Due date</option>
+            </select>
+        </div>
+
+        <div class="card table-container">
+            <table>
+                <thead><tr>
+                    <th>Done</th><th>Task</th><th>Subject</th>
+                    <th>Due Date</th><th>Priority</th><th>Status</th>
+                </tr></thead>
+                <tbody id="taskTable">
+                    <tr data-period="This Week" data-priority="1" data-date="2026-10-30">
+                        <td><input type="checkbox"></td>
+                        <td><b>Solve 10 DSA problems</b><small>Practice on LeetCode</small></td>
+                        <td>Programming</td><td>Oct 30, 2026</td>
+                        <td><span class="badge high">High</span></td>
+                        <td><span class="status">In Progress</span></td>
+                    </tr>
+                    <tr data-period="Today" data-priority="2" data-date="2026-10-28">
+                        <td><input type="checkbox"></td>
+                        <td><b>Read Chapter 4</b><small>Network Layer</small></td>
+                        <td>Networks</td><td>Oct 28, 2026</td>
+                        <td><span class="badge medium">Medium</span></td>
+                        <td><span class="status pending">Not Started</span></td>
+                    </tr>
+                    <tr data-period="This Week" data-priority="1" data-date="2026-10-29">
+                        <td><input type="checkbox"></td>
+                        <td><b>Calculus Quiz Preparation</b><small>Practice past questions</small></td>
+                        <td>Mathematics</td><td>Oct 29, 2026</td>
+                        <td><span class="badge high">High</span></td>
+                        <td><span class="status">In Progress</span></td>
+                    </tr>
+                    <tr data-period="Upcoming" data-priority="3" data-date="2026-10-31">
+                        <td><input type="checkbox"></td>
+                        <td><b>Revise Java OOP</b><small>Read notes and solve exercises</small></td>
+                        <td>Programming</td><td>Oct 31, 2026</td>
+                        <td><span class="badge low">Low</span></td>
+                        <td><span class="status pending">Not Started</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- RESOURCES PAGE -->
+    <section class="page" id="resources">
+        <div class="page-heading">
+            <h1>Browse Study Resources</h1>
+            <p>Find notes, tutorials, practice sets and other learning materials.</p>
+        </div>
+
+        <div class="card search-panel">
+            <input id="resourceSearch" type="search" placeholder="Search resources or topics...">
+            <select id="category">
+                <option value="All">All Categories</option>
+                <option value="Programming">Programming</option>
+                <option value="Networks">Networks</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="English">English</option>
+                <option value="Exam Prep">Exam Prep</option>
+            </select>
+            <button class="btn" id="searchBtn">Search</button>
+            <div class="filters category-filters">
+                <button class="filter active" data-category="All">All</button>
+                <button class="filter" data-category="Programming">⌘ Programming</button>
+                <button class="filter" data-category="Networks">Networks</button>
+                <button class="filter" data-category="Mathematics">Mathematics</button>
+                <button class="filter" data-category="English">English</button>
+                <button class="filter" data-category="Exam Prep">Exam Prep</button>
+            </div>
+        </div>
+
+        <p class="result-count" id="resultCount">8 resources found</p>
+        <div class="resource-grid" id="resourceGrid">
+            <article class="resource card" data-category="Programming">
+                <div class="resource-art purple-art">⌘</div><div class="resource-body">
+                <h3>Data Structures & Algorithms</h3><p>Notes, examples and practice problems for DSA.</p>
+                <span class="tag">Programming</span> <span class="tag">PDF</span></div>
+            </article>
+            <article class="resource card" data-category="Networks">
+                <div class="resource-art blue-art">⌁</div><div class="resource-body">
+                <h3>Computer Networks Basics</h3><p>Notes, diagrams and MCQs for network fundamentals.</p>
+                <span class="tag">Networks</span> <span class="tag">PDF</span></div>
+            </article>
+            <article class="resource card" data-category="Mathematics">
+                <div class="resource-art yellow-art">▦</div><div class="resource-body">
+                <h3>Calculus Fundamentals</h3><p>Step-by-step notes and solved problems.</p>
+                <span class="tag">Mathematics</span> <span class="tag">PDF</span></div>
+            </article>
+            <article class="resource card" data-category="English">
+                <div class="resource-art pink-art">A</div><div class="resource-body">
+                <h3>Spoken English for Beginners</h3><p>Daily conversation, grammar and vocabulary.</p>
+                <span class="tag">English</span> <span class="tag">Video</span></div>
+            </article>
+            <article class="resource card" data-category="Exam Prep">
+                <div class="resource-art pink-art">✎</div><div class="resource-body">
+                <h3>Previous Year Questions</h3><p>MCQs and written questions with solutions.</p>
+                <span class="tag">Exam Prep</span> <span class="tag">PDF</span></div>
+            </article>
+            <article class="resource card" data-category="Programming">
+                <div class="resource-art green-art">▣</div><div class="resource-body">
+                <h3>Java Programming Guide</h3><p>Java tutorials from basics to advanced.</p>
+                <span class="tag">Programming</span> <span class="tag">Video</span></div>
+            </article>
+            <article class="resource card" data-category="Networks">
+                <div class="resource-art yellow-art">⌁</div><div class="resource-body">
+                <h3>Subnetting Practice</h3><p>Practice IP addressing and subnetting problems.</p>
+                <span class="tag">Networks</span> <span class="tag">Practice</span></div>
+            </article>
+            <article class="resource card" data-category="Mathematics">
+                <div class="resource-art blue-art">∑</div><div class="resource-body">
+                <h3>Algebra Quick Revision</h3><p>Key formulas and short examples for revision.</p>
+                <span class="tag">Mathematics</span> <span class="tag">Notes</span></div>
+            </article>
+        </div>
+        <p id="noResources" class="empty hidden">No matching resources found.</p>
+    </section>
+
+    <!-- ACTIVITY PAGE -->
+    <section class="page" id="activity">
+        <div class="page-heading">
+            <h1>My Activity</h1>
+            <p>Track your study sessions, completed tasks and weekly progress.</p>
+        </div>
+        <div class="filters activity-filters">
+            <button class="filter active" data-activity="All">My Plans</button>
+            <button class="filter" data-activity="Completed">Completed</button>
+            <button class="filter" data-activity="In Progress">In Progress</button>
+        </div>
+
+        <div class="columns activity-columns">
+            <section class="card">
+                <div class="heading"><h3>▦ Recent Study Sessions</h3></div>
+                <div id="sessions">
+                    <div class="session" data-status="Completed"><span>⌘</span><div><b>Data Structures & Algorithms</b><small>1h 45m · Oct 26, 2026</small></div><label>Completed</label></div>
+                    <div class="session" data-status="Completed"><span>⌁</span><div><b>Network Layer</b><small>1h 20m · Oct 25, 2026</small></div><label>Completed</label></div>
+                    <div class="session" data-status="Completed"><span>▦</span><div><b>Calculus Practice</b><small>1h 10m · Oct 24, 2026</small></div><label>Completed</label></div>
+                    <div class="session" data-status="Completed"><span>A</span><div><b>English Listening</b><small>45m · Oct 23, 2026</small></div><label>Completed</label></div>
+                    <div class="session" data-status="In Progress"><span>♟</span><div><b>Java OOP Concepts</b><small>1h 30m · Oct 22, 2026</small></div><label class="working">In Progress</label></div>
+                </div>
+            </section>
+
+            <div class="side-column">
+                <section class="card weekly-card">
+                    <h3>Weekly Progress</h3>
+                    <div class="chart">
+                        <div class="donut"><div><b>72%</b><small>Completed</small></div></div>
+                        <div class="legend">
+                            <p>🟢 Completed <b>18</b></p>
+                            <p>🟣 In Progress <b>5</b></p>
+                            <p>🟪 Not Started <b>7</b></p>
+                            <hr><p>Total Tasks <b>30</b></p>
+                        </div>
+                    </div>
+                </section>
+                <section class="card encouragement">
+                    <span>🌱</span><div><b>Small steps make big progress!</b><p>You're doing great, keep going!</p></div>
+                </section>
+                <section class="card quote">
+                    “Discipline today builds the success of tomorrow.”
+                    <button id="likeQuote" aria-label="Like quote">♡</button>
+                </section>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>StudyMate AI · AI-powered study planner prototype</footer>
+<div id="toast" class="toast"></div>
+</body>
+</html>
