@@ -602,29 +602,6 @@ ai-study-planner/
 
 The `src/` and `database/` folders are the planned backend implementation structure and may be added as development progresses.
 
-## 28. How to Publish and Submit
-
-1. Create a new **public GitHub repository** named `ai-study-planner`.
-2. Upload `README.md` and the `prototype/` folder.
-3. Replace all placeholders (name, student ID, course, instructor, institution, and date).
-4. Update the schedule if your course uses different dates.
-5. Open `prototype/index.html` locally to check the demonstration.
-6. Add screenshots to `docs/screenshots/` and link them from the README if desired.
-7. Commit and push your final changes.
-8. Submit the repository URL in your course submission page.
-
-Example commands:
-
-```bash
-git init
-git add .
-git commit -m "Add AI Study Planner capstone proposal and prototype"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/ai-study-planner.git
-git push -u origin main
-```
-
-Replace `YOUR-USERNAME` with your GitHub username and create the remote repository before pushing.
 
 ## 29. Conclusion
 
@@ -632,6 +609,3 @@ AI Study Planner addresses a common student challenge: turning a large syllabus 
 
 ---
 
-## Academic Integrity Note
-
-This document is a proposal and starting point. Before submission, personalize the project details, verify that the schedule matches your course, review each diagram, and make sure you can explain the design and demonstrate the prototype yourself.
